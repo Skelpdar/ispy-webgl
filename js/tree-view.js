@@ -114,6 +114,16 @@ ispy.addSelectionRow = function(group, key, name, objectIds, visible) {
 	
     }
 
+    //Force color and opacity on initialization, for some non-standard meshes
+	let obj = ispy.scene.getObjectByName(key);
+    obj.children.forEach(function(o) {
+        if(o.material){
+            o.material.opacity = opacity;
+            o.material.color = color;
+        }
+    
+    });
+
     // TO-DO: Fetch pt and et from objects-config
     const row_obj = {
 	show: visible,
