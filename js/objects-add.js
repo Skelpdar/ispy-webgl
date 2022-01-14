@@ -54,7 +54,17 @@ ispy.addDetector = function() {
 		THREE.BufferGeometryUtils.mergeBufferGeometries(box_geometries),
 		box_material
 	    );
-	    
+	   
+        box.children.forEach(function(c) {
+
+            c.renderOrder = 1;
+            //Hack to force transparency on, as in other places
+            c.material.transparent = transp;
+            c.material.opacity = box_material.opacity;
+            c.material.color = box_material.ocolor;
+
+        });
+ 
 	    box.name = key;
 	    box.renderOrder = 1;
 	    ispy.scene.getObjectByName(key).add(box);

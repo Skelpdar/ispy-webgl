@@ -384,7 +384,8 @@ ispy.loadWebFiles = function() {
 	"./data/DoubleElectron_Run2012C_0.ig",
 	"./data/DoublePhoton_Run2012B_0.ig",
 	"./data/JetHT_Run2012C_0.ig",
-	"./data/MinimumBias_Run2012C_0.ig"
+	"./data/MinimumBias_Run2012C_0.ig",
+    "./data/FakeData.ig"
     ];
 
     $('#selected-event').html("Selected event");
@@ -861,8 +862,8 @@ ispy.importDetector = function() {
 	    id: 'EcalBarrel3D_V1',
 	    name: 'ECAL Barrel',
 	    group: 'Detector',
-	    show: true,
-	    file: './geometry/gltf/EcalBarrel3D_V2.glb'
+	    show: false,
+	    file: './geometry/gltf/EcalBarrel3D_V1.glb'
 	},
 	{
 	    id: 'EcalEndcapPlus3D_V1',
@@ -968,7 +969,14 @@ ispy.importDetector = function() {
 	    group: 'Detector',
 	    show: false,
 	    file: './geometry/gltf/RPCMinusEndcap3D_V1.glb'
-	}
+	},
+    {
+        id: 'LDMXECal',
+        name: 'LDMXECal',
+        group: 'Detector',
+        show: true,
+        file: './geometry/gltf/LDMXEcal.glb'
+    }
     ];
     
     $('#loading').modal('show');
@@ -993,6 +1001,8 @@ ispy.importDetector = function() {
 		    object.children.forEach(function(c) {
 
 			c.renderOrder = 1;
+            //Hack to force transparency on, as in other places
+            c.material.transparent = true;
 
 		    });
 

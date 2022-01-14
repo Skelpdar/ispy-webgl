@@ -497,6 +497,26 @@ ispy.makeVertex = function(data,style) {
 
 };
 
+ispy.makeECalHit = function(data,style) {
+    const radius = Math.tanh(data[1]/100)*0.004
+    const geometry = new THREE.SphereGeometry(radius, 32, 32);
+    const hcolor = new THREE.Color(style.color);
+    const transp = true;
+
+    const material = new THREE.MeshBasicMaterial({
+    color:hcolor,
+    transparent: transp,
+    opacity:style.opacity
+    });
+
+    const vertex = new THREE.Mesh(geometry, material);
+    vertex.position.x = data[0][0];
+    vertex.position.y = data[0][1];
+    vertex.position.z = data[0][2];
+
+    return vertex;
+}
+
 ispy.makeVertexCompositeCandidate = function(data,style) {
 
     const geometry = new THREE.SphereGeometry(style.radius, 32, 32);
@@ -850,6 +870,12 @@ ispy.makeEcal = function(ecal) {
 ispy.makeRPC = function(rpc) {
     
     return ispy.makeWireFace(rpc, 1);
+    
+};
+
+ispy.makeLDMXECal = function(data) {
+    
+    return ispy.makeWireFace(data, 1);
     
 };
 

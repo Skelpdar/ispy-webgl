@@ -3,7 +3,11 @@
 // row of the tree view and CSC at the bottom. Which is what we want.
 
 ispy.detector_description = {
-
+    "LDMXECal": {
+    type: ispy.BOX, on: false, group: "Detector", name: "LDMXECal",
+    fn: ispy.makeLDMXECal, style: {color: "rgb(60%, 80%, 0%)", opacity: 0.5, linewidth: 1.0},
+    threed: true, rphi: false, rhoz: false
+    },
     "RPCMinusEndcap3D_V1": {
 	type: ispy.BOX, on: false, group: "Detector", name: "Resistive Plate Chambers (-)",
 	fn: ispy.makeRPC, style: {color: "rgb(60%, 80%, 0%)", opacity: 0.5, linewidth: 1.0},
@@ -30,7 +34,7 @@ ispy.detector_description = {
 	threed: true, rphi: false, rhoz: false
     },
     "GEMRZ_V1": {
-	type: ispy.BOX, on: true, group: "Detector", name: "Gas Electron Multipliers RZ",
+	type: ispy.BOX, on: false, group: "Detector", name: "Gas Electron Multipliers RZ",
 	fn: ispy.makeGEM, style: {color: "rgb(30%, 70%, 10%)", opacity: 0.5, linewidth: 1.0},
 	threed: false, rphi: false, rhoz: true
     },
@@ -40,7 +44,7 @@ ispy.detector_description = {
 	threed: true, rphi: false, rhoz: false
     },
     "CSCRZ_V1": {
-	type: ispy.BOX, on: true, group: "Detector", name: "Cathode Strip Chambers RZ",
+	type: ispy.BOX, on: false, group: "Detector", name: "Cathode Strip Chambers RZ",
 	fn: ispy.makeCSC, style: {color: "rgb(60%, 70%, 10%)", opacity: 0.5, linewidth: 1.0},
 	threed: false, rphi: false, rhoz: true
     },
@@ -70,7 +74,7 @@ ispy.detector_description = {
 	threed: true, rphi: false, rhoz: false
     },
     "HcalForwardRZ_V1": {
-	type: ispy.BOX, on: true, group: "Detector", name: "HCAL Forward RZ",
+	type: ispy.BOX, on: false, group: "Detector", name: "HCAL Forward RZ",
 	fn: ispy.makeHcal, style: {color: "rgb(70%, 70%, 0%)", opacity: 0.5, linewidth: 1.0},
 	threed: false, rphi: false, rhoz: true
     },
@@ -80,12 +84,12 @@ ispy.detector_description = {
 	threed: true, rphi: false, rhoz: false
     },
     "HcalOuterRPhi_V1": {
-	type: ispy.BOX, on: true, group: "Detector", name: "HCAL Outer RPhi",
+	type: ispy.BOX, on: false, group: "Detector", name: "HCAL Outer RPhi",
 	fn: ispy.makeHcal, style: {color: "rgb(70%, 70%, 0%)", opacity: 0.5, linewidth: 1.0},
 	threed: false, rphi: true, rhoz: false
     },
     "HcalOuterRZ_V1": {
-      type: ispy.BOX, on: true, group: "Detector", name: "HCAL Outer RZ",
+      type: ispy.BOX, on: false, group: "Detector", name: "HCAL Outer RZ",
       fn: ispy.makeHcal, style: {color: "rgb(70%, 70%, 0%)", opacity: 0.5, linewidth: 1.0},
       threed: false, rphi: false, rhoz: true
     },
@@ -100,7 +104,7 @@ ispy.detector_description = {
 	threed: true, rphi: false, rhoz: false
     },
     "HcalEndcapRZ_V1": {
-	type: ispy.BOX, on: true, group: "Detector", name: "HCAL Endcap RZ",
+	type: ispy.BOX, on: false, group: "Detector", name: "HCAL Endcap RZ",
 	fn: ispy.makeHcal, style: {color: "rgb(70%, 70%, 0%)", opacity: 0.5, linewidth: 1.0},
 	threed: false, rphi: false, rhoz: true
     },
@@ -110,12 +114,12 @@ ispy.detector_description = {
 	threed: true, rphi: false, rhoz: false
     },
     "HcalBarrelRPhi_V1": {
-	type: ispy.BOX, on: true, group: "Detector", name: "HCAL Barrel RPhi",
+	type: ispy.BOX, on: false, group: "Detector", name: "HCAL Barrel RPhi",
 	fn: ispy.makeHcal, style: {color: "rgb(70%, 70%, 0%)", opacity: 0.5, linewidth: 1.0},
 	threed: false, rphi: true, rhoz: false
     },
     "HcalBarrelRZ_V1": {
-	type: ispy.BOX, on: true, group: "Detector", name: "HCAL Barrel RZ",
+	type: ispy.BOX, on: false, group: "Detector", name: "HCAL Barrel RZ",
 	fn: ispy.makeHcal, style: {color: "rgb(70%, 70%, 0%)", opacity: 0.5, linewidth: 1.0},
 	threed: false, rphi: false, rhoz: true
     },
@@ -130,22 +134,22 @@ ispy.detector_description = {
 	threed: true, rphi: false, rhoz: false
     },
     "EcalEndcapRZ_V1": {
-	type: ispy.BOX, on: true, group: "Detector", name: "ECAL Endcap RZ",
+	type: ispy.BOX, on: false, group: "Detector", name: "ECAL Endcap RZ",
 	fn: ispy.makeEcal, style: {color: "rgb(50%, 80%, 100%)", opacity: 0.75, linewidth: 1.0},
 	threed: false, rphi: false, rhoz: true
     },
     "EcalBarrel3D_V1": {
-	type: ispy.BOX, on: true, group: "Detector", name: "ECAL Barrel",
+	type: ispy.BOX, on: false, group: "Detector", name: "ECAL Barrel",
 	fn: ispy.makeEcal, style: {color: "rgb(50%, 80%, 100%)", opacity: 0.01, linewidth: 0.5},
 	threed: true, rphi: false, rhoz: false
     },
     "EcalBarrelRPhi_V1": {
-	type: ispy.BOX, on: true, group: "Detector", name: "ECAL Barrel RPhi",
+	type: ispy.BOX, on: false, group: "Detector", name: "ECAL Barrel RPhi",
 	fn: ispy.makeEcal, style: {color: "rgb(50%, 80%, 100%)", opacity: 0.75, linewidth: 1.0},
 	threed: false, rphi: true, rhoz: false
     },
     "EcalBarrelRZ_V1": {
-	type: ispy.BOX, on: true, group: "Detector", name: "ECAL Barrel RZ",
+	type: ispy.BOX, on: false, group: "Detector", name: "ECAL Barrel RZ",
 	fn: ispy.makeEcal, style: {color: "rgb(50%, 80%, 100%)", opacity: 0.75, linewidth: 1.0},
 	threed: false, rphi: false, rhoz: true
     },
@@ -239,7 +243,7 @@ ispy.event_description = {
 	scale: 1.0, selection: {"min_energy": 0.25}
     },
     "EERecHits_V2": {
-	type: ispy.SCALEDSOLIDTOWER, on: true, group: "ECAL", name: "Endcap Rec. Hits",
+	type: ispy.SCALEDSOLIDTOWER, on: false, group: "ECAL", name: "Endcap Rec. Hits",
 	fn: ispy.makeERecHit_V2, style: {color: "rgb(10%, 100%, 10%)", opacity: 0.5, linewidth: 0.5},
 	scale: 0.01, selection: {"min_energy": 0.5}
     },
@@ -249,7 +253,7 @@ ispy.event_description = {
 	scale: 100.0, selection: {"min_energy": 0.0005}
     },
     "EBRecHits_V2": {
-	type: ispy.SCALEDSOLIDTOWER, on: true, group: "ECAL", name: "Barrel Rec. Hits",
+	type: ispy.SCALEDSOLIDTOWER, on: false, group: "ECAL", name: "Barrel Rec. Hits",
 	fn: ispy.makeERecHit_V2, style: {color: "rgb(10%, 100%, 10%)", opacity: 0.5, linewidth: 0.5},
 	scale: 0.1, selection: {"min_energy": 0.25}
     },
@@ -269,12 +273,12 @@ ispy.event_description = {
 	selection: {"min_energy": 1.0}
     },
     "HERecHits_V2": {
-	type: ispy.SCALEDSOLIDBOX, on: true, group: "HCAL", name: "Endcap Rec. Hits",
+	type: ispy.SCALEDSOLIDBOX, on: false, group: "HCAL", name: "Endcap Rec. Hits",
 	fn: ispy.makeHRecHit_V2, style: {color: "rgb(20%, 70%, 100%)", opacity: 0.5, linewidth: 0.25},
 	selection: {"min_energy": 0.0}
     },
     "HBRecHits_V2": {
-	type: ispy.SCALEDSOLIDBOX, on: true, group: "HCAL", name: "Barrel Rec. Hits",
+	type: ispy.SCALEDSOLIDBOX, on: false, group: "HCAL", name: "Barrel Rec. Hits",
 	fn: ispy.makeHRecHit_V2, style: {color: "rgb(20%, 70%, 100%)", opacity: 0.5, linewidth: 0.25},
 	selection: {"min_energy": 0.0}
     },
@@ -289,28 +293,28 @@ ispy.event_description = {
 	selection: {"min_energy": 0.01}
     },
     "Tracks_V1": {
-	type: ispy.ASSOC, on: true, group: "Tracking", name: "Tracks (reco.)",
+	type: ispy.ASSOC, on: false, group: "Tracking", name: "Tracks (reco.)",
 	extra: "Extras_V1", assoc: "TrackExtras_V1",
 	fn: ispy.makeTracks, style: {color: "rgb(100%, 100%, 0%)",
 				     opacity: 0.5, lineCaps: "square", linewidth: 1},
 	selection: {"min_pt": 1.0, index: 2}
     },
     "Tracks_V2": {
-	type: ispy.ASSOC, on: true, group: "Tracking", name: "Tracks (reco.)",
+	type: ispy.ASSOC, on: false, group: "Tracking", name: "Tracks (reco.)",
 	extra: "Extras_V1", assoc: "TrackExtras_V1",
 	fn: ispy.makeTracks, style: {color: "rgb(100%, 100%, 0%)",
 				     opacity: 0.5, lineCaps: "square", linewidth: 1},
 	selection: {"min_pt": 1.0, "index": 2}
     },
     "Tracks_V3": {
-	type: ispy.ASSOC, on: true, group: "Tracking", name: "Tracks (reco.)",
+	type: ispy.ASSOC, on: false, group: "Tracking", name: "Tracks (reco.)",
 	extra: "Extras_V1", assoc: "TrackExtras_V1",
 	fn: ispy.makeTracks, style: {color: "rgb(100%, 100%, 0%)",
 				     opacity: 0.5, lineCaps: "square", linewidth: 1},
 	selection: {"min_pt": 1.0, "index": 2}
     },
     "Tracks_V4": {
-	type: ispy.ASSOC, on: true, group: "Tracking", name: "Tracks (reco.)",
+	type: ispy.ASSOC, on: false, group: "Tracking", name: "Tracks (reco.)",
 	extra: "Extras_V1", assoc: "TrackExtras_V1",
 	fn: ispy.makeTracks, style: {color: "rgb(100%, 100%, 0%)",
 				     opacity: 0.5, lineCaps: "square", linewidth: 1},
@@ -547,13 +551,13 @@ ispy.event_description = {
 	selection: {"min_pt":1.0, "index":0}
     },
     "GsfElectrons_V3": {
-	type: ispy.ASSOC, on: true, group: "Physics", name: "Electron Tracks (GSF)",
+	type: ispy.ASSOC, on: false, group: "Physics", name: "Electron Tracks (GSF)",
 	extra: "Extras_V1", assoc: "GsfElectronExtras_V1",
 	fn: ispy.makeTracks, style: {color: "rgb(10%, 100%, 10%)", opacity: 1, linewidth: 3},
 	selection: {"min_pt":1.0, "index":0}
     },
     "PATElectrons_V1": {
-	type: ispy.ASSOC, on: true, group: "Physics", name: "Electron Tracks (PAT)",
+	type: ispy.ASSOC, on: false, group: "Physics", name: "Electron Tracks (PAT)",
 	extra: "Extras_V1", assoc: "PATElectronExtras_V1",
 	fn: ispy.makeTracks, style: {color: "rgb(10%, 100%, 10%)", opacity: 0.9, linewidth: 3},
 	selection: {"min_pt":1.0, "index":0}
@@ -561,6 +565,10 @@ ispy.event_description = {
     "Vertices_V1": {
 	type:ispy.SHAPE, on:false, group:"Physics", name: "Vertices (Reco)",
 	fn:ispy.makeVertex, style: {radius: 0.002, color: "rgb(100%, 100%, 0%)", opacity: 0.9}
+    },
+    "ECalHits": {
+	type:ispy.SHAPE, on:true, group:"Physics", name: "ECal Hits",
+	fn:ispy.makeECalHit, style: {radius: 0.008, color: "rgb(100%, 100%, 0%)", opacity: 0.9}
     },
     "PrimaryVertices_V1": {
         type:ispy.SHAPE, on:false, group:"Physics", name: "Primary Vertices (Reco)",

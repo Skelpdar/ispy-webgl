@@ -9,15 +9,15 @@ ispy.animation_script = {
     "collision": {
       "proton1": {
         "pi" : {x:0, y:0, z:200.0},
-        "pf" : {x:0, y:0, z:-200.0}
+        "pf" : {x:0, y:0, z:0.0}
       },
       "proton2": {
         "pi": {x:0, y:0, z:-200.0},
-        "pf": {x:0, y:0, z:200.0}
+        "pf": {x:0, y:0, z:-200.0}
       },
       "time": 2500,
       "before_objects": [ // What gets turned off/on before the collision
-        {key:"BeamPipe", show:true},
+        {key:"BeamPipe", show:false},
         {key:"Tracks_V1", show:false},
         {key:"Tracks_V2", show:false},
         {key:"Tracks_V3", show:false},
@@ -44,36 +44,38 @@ ispy.animation_script = {
         {key:"TrackerMuons_V2", show:false},
         {key:"GsfElectrons_V1", show:false},
         {key:"GsfElectrons_V2", show:false},
-        {key:"PFJets_V1", show:false}
+        {key:"PFJets_V1", show:false},
+        {key:"ECalHits", show:false}
       ],
       "after_objects": [ // What gets turned on/off after the collision
-        {key:"Tracks_V1", show:true},
-        {key:"Tracks_V2", show:true},
-        {key:"Tracks_V3", show:true},
-        {key:"EERecHits_V2", show:true},
-        {key:"EBRecHits_V2", show:true},
-        {key:"HERecHits_V2", show:true},
-        {key:"HBRecHits_V2", show:true},
-        {key:"DTRecSegment4D_V1", show:true},
-        {key:"RPCRecHits_V1", show:true},
-        {key:"CSCRecHit2Ds_V2", show:true},
-        {key:"CSCSegments_V1", show:true},
-        {key:"CSCSegments_V2", show:true},
-        {key:"CSCSegments_V3", show:true},
-        {key:"GEMRecHits_V2", show:true},
-        {key:"GEMSegments_V1", show:true},
-        {key:"GEMSegments_V2", show:true},
-        {key:"GEMSegments_V3", show:true},
-        {key:"GEMDigis_V2", show:true},
-        {key:"MuonChambers_V1", show:true},
-        {key:"GlobalMuons_V1", show:true},
-        {key:"TrackerMuons_V2", show:true},
-        {key:"PrimaryVertices", show:true}, 
-        {key:"SecondaryVertices", show:true},
-        {key:"GsfElectrons_V1", show:true},
-        {key:"GsfElectrons_V2", show:true}, 
+        {key:"Tracks_V1", show:false},
+        {key:"Tracks_V2", show:false},
+        {key:"Tracks_V3", show:false},
+        {key:"EERecHits_V2", show:false},
+        {key:"EBRecHits_V2", show:false},
+        {key:"HERecHits_V2", show:false},
+        {key:"HBRecHits_V2", show:false},
+        {key:"DTRecSegment4D_V1", show:false},
+        {key:"RPCRecHits_V1", show:false},
+        {key:"CSCRecHit2Ds_V2", show:false},
+        {key:"CSCSegments_V1", show:false},
+        {key:"CSCSegments_V2", show:false},
+        {key:"CSCSegments_V3", show:false},
+        {key:"GEMRecHits_V2", show:false},
+        {key:"GEMSegments_V1", show:false},
+        {key:"GEMSegments_V2", show:false},
+        {key:"GEMSegments_V3", show:false},
+        {key:"GEMDigis_V2", show:false},
+        {key:"MuonChambers_V1", show:false},
+        {key:"GlobalMuons_V1", show:false},
+        {key:"TrackerMuons_V2", show:false},
+        {key:"PrimaryVertices", show:false}, 
+        {key:"SecondaryVertices", show:false},
+        {key:"GsfElectrons_V1", show:false},
+        {key:"GsfElectrons_V2", show:false}, 
         {key:"PFJets_V1", show:false},
-        {key:"BeamPipe", show:false}
+        {key:"BeamPipe", show:false},
+        {key:"ECalHits", show:true}
       ]
     },
     "zoom": {
@@ -82,8 +84,8 @@ ispy.animation_script = {
     // This rotation is actually split into two halves and the toggle
     // on objects happens at PI
     "rotation": {
-      "radius": 2.0,
-      "angle": 2*Math.PI,
+      "radius": 1.0,
+      "angle": Math.PI,
       "nsteps": 24,
       "time": 5000,
       "objects": [ // What to turn on/off at the middle of the rotation
@@ -127,7 +129,7 @@ ispy.toggleAnimation = function() {
     for ( var i = 1; i <= ns; i++ ) {
       cx.push(r*Math.sin(s*i));
       cy.push(0.0);
-      cz.push(r*Math.cos(s*i));
+      cz.push(-0.22+r*Math.cos(s*i));
     }
 
     var bs = 0;
@@ -167,8 +169,8 @@ ispy.toggleAnimation = function() {
 
     zoom3.delay(1000);
 
-    var pgeometry = new THREE.SphereGeometry(0.25,32,32);
-    var pmaterial = new THREE.MeshBasicMaterial({color: 0xffff00});
+    var pgeometry = new THREE.SphereGeometry(0.01,32,32);
+    var pmaterial = new THREE.MeshBasicMaterial({color: 0x0000ff});
 
     var proton1 = new THREE.Mesh(pgeometry, pmaterial);
     proton1.position.x = animation.collision.proton1.pi.x;
@@ -219,8 +221,8 @@ ispy.toggleAnimation = function() {
 
     zoom1.chain(zoom2);
     zoom2.chain(rotation1);
-    rotation1.chain(rotation2);
-    rotation2.chain(zoom3);
+    //rotation1.chain(rotation2);
+    //rotation2.chain(zoom3);
 
     c1.start();
     c2.start();
