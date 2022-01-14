@@ -5,7 +5,7 @@
 ispy.detector_description = {
     "LDMXECal": {
     type: ispy.BOX, on: false, group: "Detector", name: "LDMXECal",
-    fn: ispy.makeLDMXECal, style: {color: "rgb(60%, 80%, 0%)", opacity: 0.5, linewidth: 1.0},
+    fn: ispy.makeLDMXECal, style: {color: "rgb(0%, 20%, 80%)", opacity: 0.5, linewidth: 1.0},
     threed: true, rphi: false, rhoz: false
     },
     "RPCMinusEndcap3D_V1": {

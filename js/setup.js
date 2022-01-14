@@ -37,9 +37,9 @@ ispy.setFramerate = function(fr) {
 
 ispy.initCamera = function() {
 
-    ispy.camera.position.x = 9.5;
-    ispy.camera.position.y = 9.5;
-    ispy.camera.position.z = 13.0;
+    ispy.camera.position.x = 0.5;
+    ispy.camera.position.y = 0.5;
+    ispy.camera.position.z = 1.0;
 
     ispy.camera.zoom = 2.0;
     ispy.camera.up = new THREE.Vector3(0,1,0);
