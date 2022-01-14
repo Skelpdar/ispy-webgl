@@ -795,6 +795,7 @@ ispy.importDetector = function() {
     const gltf_loader = new THREE.GLTFLoader();
     
     const gltf_objs = [
+    /*
 	{
 	    id: 'PixelBarrel3D_V1',
 	    name: 'Pixel Barrel',
@@ -969,7 +970,7 @@ ispy.importDetector = function() {
 	    group: 'Detector',
 	    show: false,
 	    file: './geometry/gltf/RPCMinusEndcap3D_V1.glb'
-	},
+	},*/
     {
         id: 'LDMXECal',
         name: 'LDMXECal',

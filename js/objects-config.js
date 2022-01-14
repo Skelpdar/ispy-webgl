@@ -567,7 +567,7 @@ ispy.event_description = {
 	fn:ispy.makeVertex, style: {radius: 0.002, color: "rgb(100%, 100%, 0%)", opacity: 0.9}
     },
     "ECalHits": {
-	type:ispy.SHAPE, on:true, group:"Physics", name: "ECal Hits",
+	type:ispy.SHAPE, on:true, group:"ECAL", name: "ECal Hits",
 	fn:ispy.makeECalHit, style: {radius: 0.008, color: "rgb(100%, 100%, 0%)", opacity: 0.9}
     },
     "PrimaryVertices_V1": {
