@@ -5,7 +5,7 @@
 ispy.detector_description = {
     "LDMXECal": {
     type: ispy.BOX, on: false, group: "Detector", name: "LDMXECal",
-    fn: ispy.makeLDMXECal, style: {color: "rgb(0%, 20%, 80%)", opacity: 0.5, linewidth: 1.0},
+    fn: ispy.makeLDMXECal, style: {color: "rgb(0%, 20%, 80%)", opacity: 0.25, linewidth: 1.0},
     threed: true, rphi: false, rhoz: false
     },
     "RPCMinusEndcap3D_V1": {
@@ -568,7 +568,15 @@ ispy.event_description = {
     },
     "ECalHits": {
 	type:ispy.SHAPE, on:true, group:"ECAL", name: "ECal Hits",
-	fn:ispy.makeECalHit, style: {radius: 0.008, color: "rgb(100%, 100%, 0%)", opacity: 0.9}
+	fn:ispy.makeECalHit, style: {radius: 0.008, color: "rgb(100%, 0%, 0%)", opacity: 0.9}
+    },
+    "ECalElectronProj": {
+    type:ispy.SHAPE, on:true, group:"ECAL", name: "ECal Electron Proj.",
+    fn:ispy.makeLine, style:{color: "rgb(100%, 58%, 0%)", opacity:0.9, linewidth:0.004}
+    },
+    "ECalPhotonProj": {
+    type:ispy.SHAPE, on:true, group:"ECAL", name: "ECal Photon Proj.",
+    fn:ispy.makeLine, style:{color: "rgb(0%, 80%, 100%)", opacity:0.9, linewidth:0.004}
     },
     "PrimaryVertices_V1": {
         type:ispy.SHAPE, on:false, group:"Physics", name: "Primary Vertices (Reco)",

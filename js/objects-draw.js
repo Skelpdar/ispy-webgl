@@ -380,6 +380,22 @@ ispy.makeTrackPoints = function(data, extra, assoc, style, selection) {
 
 };
 
+ispy.makeLine = function(data, style) {
+    const line2 = new THREE.Line2(
+    new THREE.LineGeometry().setPositions([...data[0],...data[1]]),
+    new THREE.LineMaterial({
+        color: style.color,
+        linewidth: style.linewidth,
+        transparent: true,
+        opacity:style.opacity
+    })
+    );
+
+    line2.computeLineDistances(); 
+
+    return line2;
+};
+
 ispy.makeTracks = function(tracks, extras, assocs, style, selection) {
   
     if ( ! assocs ) {

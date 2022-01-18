@@ -376,6 +376,7 @@ ispy.selectFile = function(filename) {
 ispy.loadWebFiles = function() {
 
     const web_files = [
+    /*
 	"./data/Hto4l_120-130GeV.ig",
 	"./data/BJetPlusX_Run2012C_0.ig",
 	"./data/DoubleMuParked_Run2012C_0.ig",
@@ -385,6 +386,7 @@ ispy.loadWebFiles = function() {
 	"./data/DoublePhoton_Run2012B_0.ig",
 	"./data/JetHT_Run2012C_0.ig",
 	"./data/MinimumBias_Run2012C_0.ig",
+    */
     "./data/FakeData.ig"
     ];
 
